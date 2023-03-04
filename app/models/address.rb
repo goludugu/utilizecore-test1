@@ -1,5 +1,7 @@
-class Address < ApplicationRecord
-	validates :address_line_one, :city, :state, :country, presence: true
+# frozen_string_literal: true
 
-	belongs_to :user
+class Address < ApplicationRecord
+  validates :address_line_one, :city, :state, :country, :pincode, :mobile_number, presence: true
+
+  belongs_to :user
 end

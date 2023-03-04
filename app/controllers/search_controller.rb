@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 class SearchController < ApplicationController
   def index
-    if params[:search].present?
-      @parcels = Parcel.where(id: params[:search])
-    else
-      @parcels = []
-    end
+    @parcels = if params[:search].present?
+                 Parcel.search_by_order_id(params[:search])
+               else
+                 []
+               end
   end
 end

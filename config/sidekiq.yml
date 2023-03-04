@@ -1,0 +1,9 @@
+:concurrency: 5
+:queues:
+  - [notification_mailer, 2]
+
+development:
+  :url: redis://localhost:6379/0
+  
+production:
+  :url: redis://localhost:6379/0
